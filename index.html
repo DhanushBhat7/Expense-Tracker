@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Load Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Expense Tracker</h1>
+    </header>
+    <main>
+      <div class="income-section">
+        <label for="income">Set Income:</label>
+        <input type="number" id="income" placeholder="Enter income" />
+        <button id="set-income-btn">Set Income</button>
+      </div>
+
+      <div class="month-year-selector">
+        <select id="month-selector"></select>
+        <select id="year-selector"></select>
+      </div>
+
+      <div class="expense-section">
+        <label for="amount">Expense Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" />
+        <div class="categories">
+          <button class="category-btn" data-category="Food">Food</button>
+          <button class="category-btn" data-category="Clothing">Clothing</button>
+          <button class="category-btn" data-category="Fuel">Fuel</button>
+          <button class="category-btn" data-category="Bike">Bike</button>
+          <button class="category-btn" data-category="Metro">Metro</button>
+          <button class="category-btn" data-category="Tea">Tea</button>
+          <button class="category-btn" data-category="Home">Home</button>
+          <button class="category-btn" data-category="Recharge">Recharge</button>
+          <button class="category-btn" data-category="Postpaid">Postpaid</button>
+          <button class="category-btn" data-category="Others">Others</button>
+        </div>
+        <button id="add-expense-btn">Add Expense</button>
+      </div>
+
+      <div class="summary">
+        <div class="card" id="remaining-card">Remaining: $<span id="remaining">0</span></div>
+        <div class="card" id="debt-card" style="display: none;">Debt: $<span id="debt">0</span></div>
+        <div id="category-summary"></div>
+      </div>
+
+      <div class="last-changed-section">
+        <label for="last-changed">Last Changed Date:</label>
+        <input type="date" id="last-changed" />
+        <button id="set-date-btn">Set Date</button>
+        <div id="last-changed-display" class="card"></div>
+      </div>
+
+      <div class="chart-section">
+        <canvas id="expense-chart"></canvas>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
